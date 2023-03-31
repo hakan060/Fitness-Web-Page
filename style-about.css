@@ -1,0 +1,122 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: #f1f1f1;
+}
+ul{
+    margin-top: 1%;
+    flex: 1;
+    text-align: right;
+}
+ul li {
+    display: inline-block;
+    list-style: none;
+    margin: 0 25px;   
+}
+/* between lines 10 and 47 I listed the tabs in our list in order and applied the hover plugin.*/
+ul li a 
+{
+    text-decoration: none; /* alt yazıyı siliyor */
+    font-size: 18px;
+    color: black;
+    padding: 0 10px;
+    position: relative;
+}
+ul li a::after
+{
+    content: '';
+    width: 0;
+    height: 10px;
+    background: #634af1;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -100%;
+    transition: 0.5s;
+}
+ul li a:hover::after
+/* I wanted to use hover and add transition feature
+While doing this, I wanted to use the width property on the hover, reducing the width after*/
+{
+    width: 100%;
+
+}
+/*I edited the titles*/
+.main-about{
+    text-align: center;
+    margin-top: 25px;
+    
+}
+.main-about h1{
+    padding-top: 1%;
+    font-size: 50px;
+    color: rgb(79, 107, 202);
+    margin-bottom: 10px;
+}
+.main-about h5{
+    font-size: 30px;
+    color: rgb(86, 86, 189);
+    margin-top: 10px;
+}
+.about-us{
+    display: flex;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+}
+/*I changed the settings of the buttons and photos*/
+.about-us img {
+    flex:0 50%;
+    max-width: 50%;
+    height: auto;
+    margin-bottom: 5%;
+}
+.content{
+    padding: 35px;
+}
+.content h2{
+    color: rgb(161, 161, 238);
+    font-size: 22px;
+    margin: 15px 0px;
+}
+.content p{
+    
+    color: rgb(55, 55, 128);
+    font-size: 18px;
+    line-height: 1.5;
+    margin:15px 0px ;
+}
+.button-about{
+    display: inline-block;
+    color: #fff;
+    background-color: #0084ff;
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.button-about:hover {
+    background-color: #006dd6;
+}
+/*I tried to make it more regular 
+by finding the appropriate pixels for my screen.*/
+@media(max-width:768px) {
+    .about-us{
+        flex-direction: column;
+    }
+    .about-us img{
+        flex:0 100%;
+        max-width: 100%;
+    }
+    .content{
+        flex: 0 100%;
+        max-width: 100%;
+        padding: 15px;
+    }
+}
